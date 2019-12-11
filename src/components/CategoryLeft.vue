@@ -25,8 +25,8 @@ export default{
 	methods:{
 		getLeftDatas(){
 			let _this = this;
-			_this.$http.get('/category').then((res)=>{
-				_this.leftDatas = res.data;
+			_this.$http.get('/api_shop/category').then((res)=>{
+				_this.leftDatas = res.data.left_data;
 			},(err)=>{
 				console.log(err);
 			})

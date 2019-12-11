@@ -81,9 +81,9 @@
         methods:{
             getData(){
                 let _this = this;
-                _this.$http.get('http://47.112.218.7/api_shop/products').then((res)=>{
-                    _this.homeDatas = res.home_data;
-                    _this.mainDatas = res.main_data
+                _this.$http.get('/api_shop/products').then((res)=>{
+                    _this.homeDatas = res.data.home_data;
+                    _this.mainDatas = res.data.main_data
                     // _this.homeDatas.push(res.data[0]);
                     // _this.homeDatas.push(res.data[1]);
                     // _this.homeDatas.push(res.data[2]);

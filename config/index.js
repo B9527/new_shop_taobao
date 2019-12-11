@@ -10,7 +10,16 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/api_shop':{
+        target: 'http://47.112.218.7/',
+        changeOrigin: true,
+        pathRewrite:function(path, req){
+          console.log(path)
+          return path.replace('/api_shop', '/api_shop')
+        }
+      }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST

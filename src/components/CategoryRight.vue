@@ -45,12 +45,12 @@ export default{
 			fetchData(id){
 				var _this=this;
 				
-				_this.$http.get('/categorygoods',{
+				_this.$http.get('/api_shop/products',{
 					params: {
 						mId: id
 					}
 				}).then((res)=>{
-					_this.cateGoodsData = res.data;
+					_this.cateGoodsData = res.data.cate_goods_data;
 				},(err)=>{
 					console.log(err);
 				})
