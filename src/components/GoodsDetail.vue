@@ -22,26 +22,26 @@
             </section>
             <section class="product_info clearfix">
                 <div class="product_left">
-                    <p class="p_name">{{goodsData[0].product_name}}</p>
+                    <p class="p_name">{{goodsData.product_name}}</p>
                     <div class="product_pric">
                         <span>￥</span>
-                        <span class="rel_price">{{goodsData[0].product_price}}</span>
+                        <span class="rel_price">{{goodsData.product_price}}</span>
                         <span>.00</span>
                     </div>
-                    <div class="product_right" @click="showImage">
+                    <!-- <div class="product_right" @click="showImage">
                         降价通知
-                    </div>
+                    </div> -->
                 </div>
 
             </section>
             <section class="product_intro">
                 <p class="pro_det">
-                    {{goodsData[0].product_detail}}
+                    {{goodsData.product_detail}}
                 </p>
            </section>
           
         </main>
-        <footer class="cart_d_footer">
+        <!-- <footer class="cart_d_footer">
             <div class="m">
                 <ul class="m_box">
                     <li class="m_item">
@@ -64,7 +64,7 @@
                     <a href="#" class="buybuy">立即购买</a>
                 </div>
             </div>
-        </footer>
+        </footer> -->
 	</div>
 </template>
 <script>
@@ -93,29 +93,30 @@
             fetchData(id){
                 var _this=this;
                 
-                _this.$http.get('/detail',{
+                _this.$http.get('/api_shop/detail',{
                     params: {
-                        mId: id
+                        p_id: id
                     }
                 }).then((res)=>{
                     // _this.goodsImages = res.data[0];
-                    _this.goodsData = res.data[1];
-                    let tempGoodsImages;
-                    tempGoodsImages = res.data[0];
-                    tempGoodsImages.forEach(element => {
-                        console.log(element.image_url);
-                         _this.goodsImages.push(element.image_url)
-                    });
+                    _this.goodsData = res.data.goods_data;
+                    _this.goodsImages = res.data.image_url_list
+                    // let tempGoodsImages;
+                    // tempGoodsImages = res.data[0];
+                    // tempGoodsImages.forEach(element => {
+                    //     console.log(element.image_url);
+                    //      _this.goodsImages.push(element.image_url)
+                    // });
                     
                 },(err)=>{
                     console.log(err);
                 })
             },
             showImage(){
-                console.log(this.goodsImages);
-                // this.goodsImages.forEach(element => {
-                //     console.log(element.image_url)
-                // });
+                // console.log(this.goodsImages);
+                this.goodsImages.forEach(element => {
+                    console.log(element.image_url)
+                });
 
             }
         }

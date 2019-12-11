@@ -57,17 +57,27 @@
 		},
 		methods: {
 			searchGoods(search_key){
-				console.log(search_key);
+				var _this=this;
+				
+				_this.$http.get('/api_shop/category_goods',{
+					params: {
+						name: search_key
+					}
+				}).then((res)=>{
+					_this.cateGoodsData = res.data.cate_goods_data;
+				},(err)=>{
+					console.log(err);
+				})
 			},
 			fetchData(id){
 				var _this=this;
 				
-				_this.$http.get('/api_shop/products',{
+				_this.$http.get('/api_shop/category_goods',{
 					params: {
 						mId: id
 					}
 				}).then((res)=>{
-					_this.cateGoodsData = res.data.main_data;
+					_this.cateGoodsData = res.data.cate_goods_data;
 				},(err)=>{
 					console.log(err);
 				})

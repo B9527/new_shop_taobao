@@ -66,13 +66,7 @@
         data(){
             return {
                 homeDatas : [],
-                mainDatas:[{"product_id":1,"product_img_url":"https://img10.360buyimg.com/n2/jfs/t1/64731/3/9170/340030/5dc14d57E1ca5a78e/75ab15c91efd5d4d.jpg", "product_name":"法国兰蔻", "product_price":20},
-                {"product_id":1,"product_img_url":"https://img10.360buyimg.com/n2/jfs/t1/64731/3/9170/340030/5dc14d57E1ca5a78e/75ab15c91efd5d4d.jpg", "product_name":"法国兰蔻", "product_price":20},
-                {"product_id":1,"product_img_url":"https://img10.360buyimg.com/n2/jfs/t1/64731/3/9170/340030/5dc14d57E1ca5a78e/75ab15c91efd5d4d.jpg", "product_name":"法国兰蔻", "product_price":20},
-                {"product_id":1,"product_img_url":"https://img10.360buyimg.com/n2/jfs/t1/64731/3/9170/340030/5dc14d57E1ca5a78e/75ab15c91efd5d4d.jpg", "product_name":"法国兰蔻", "product_price":20},
-                {"product_id":1,"product_img_url":"https://img10.360buyimg.com/n2/jfs/t1/64731/3/9170/340030/5dc14d57E1ca5a78e/75ab15c91efd5d4d.jpg", "product_name":"法国兰蔻", "product_price":20},
-                {"product_id":1,"product_img_url":"https://img10.360buyimg.com/n2/jfs/t1/64731/3/9170/340030/5dc14d57E1ca5a78e/75ab15c91efd5d4d.jpg", "product_name":"法国兰蔻", "product_price":20},
-                ]
+                mainDatas:[]
             }
         },
         mounted(){

@@ -45,7 +45,7 @@ export default{
 			fetchData(id){
 				var _this=this;
 				
-				_this.$http.get('/api_shop/products',{
+				_this.$http.get('/api_shop/category_goods',{
 					params: {
 						mId: id
 					}
