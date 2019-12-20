@@ -5,6 +5,7 @@ body {
 .detail_box {
     width: 100%;
     height: 100%;
+    margin-bottom: 30%;
 }
 
 .detail_box .banner_box {
@@ -154,6 +155,8 @@ body {
     font-weight: 500;
     color: #48484B;
     line-height: 20px;
+    margin-right: 3%;
+    margin-left: 2%;
 }
 
 .cart_d_footer {

@@ -7,9 +7,16 @@ import store from './store/'
 import VueLazyload from 'vue-lazyload'
 import App from './App.vue'
 import Loading from './components/loading'
+import preview from 'vue-photo-preview'
+import 'vue-photo-preview/dist/skin.css'
+let options = {
+    fullscreenEl: false
+  };
+
 require('./assets/css/base.css'); //全局引入
 Vue.config.productionTip = false
 Vue.use(Less);
+Vue.use(preview, options);
 Vue.use(VueRouter);
 Vue.use(Loading);
 Vue.use(VueLazyload, {

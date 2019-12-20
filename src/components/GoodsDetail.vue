@@ -7,12 +7,12 @@
         </header>
         <main class="detail_box">
             <section class="banner_box" id="">
-                <ul class="banner_child_box1">
+                <ul class="banner_child_box">
                     <li class="banner_item" v-for="(item, index) in goodsImages" :key="index">
-                        <img v-lazy="item" alt="" class="banner_pic">
+                        <img :src="item" preview="1" preview-text="" alt="" class="banner_pic">
                     </li>
-                
                 </ul>
+
                 <div class="banner_count">
                         <em id="slide-nub" class="fz18">1</em>
                         <em class="nub-bg">/</em>
@@ -100,7 +100,8 @@
                 }).then((res)=>{
                     // _this.goodsImages = res.data[0];
                     _this.goodsData = res.data.goods_data;
-                    _this.goodsImages = res.data.image_url_list
+                    _this.goodsImages = res.data.image_url_list;
+                    this.$previewRefresh();
                     // _this.goodsImages.push("https://gd4.alicdn.com/bao/uploaded/i4/TB1_1SPIpXXXXXxXFXXXXXXXXXX_!!0-item_pic.jpg_400x400.jpg")
                     // let tempGoodsImages;
                     // tempGoodsImages = res.data[0];
