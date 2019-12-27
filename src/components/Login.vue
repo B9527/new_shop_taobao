@@ -41,25 +41,26 @@
 				}else if(_this.password == ''){
 					alert('请输入密码');
 				}else{
-					_this.$http.post('/login',{
+					_this.$http.post('api_shop/my_user/login',{
 						loginName:_this.username,
 						loginPawd:_this.password,
 					}).then((res)=>{
 						console.log(_this.password);
 					if(res.status == 200){
+						console.log(res.data);
 						_this.userInfo = res.data;
 						if(_this.userInfo.status == 1){
 							//LOGIN success
 							window.sessionStorage.userInfo = JSON.stringify(_this.userInfo);
 							console.log(_this.$store);
-							_this.$store.dispatch('setUserInfo', userInfo);
+							_this.$store.dispatch('setUserInfo', _this.userInfo);
                         let redirect = decodeURIComponent(_this.$route.query.redirect || '/');
                         _this.$router.push({
                             path: redirect
                         });
 							
 						}else{
-							alert(_this.userInfo.msg);
+							alert(_this.userInfo.error_msg);
 						}
 					}else{
 						alert('请求出现错误');

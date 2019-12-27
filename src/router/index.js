@@ -9,7 +9,7 @@ import Mine from '@/components/Mine'
 import Login from '@/components/Login'
 import Reg from '@/components/Reg'
 import GoodsDetail from '@/components/GoodsDetail'
-
+// import Cart from '@/components/Cart'
 
 Vue.use(Router)
 
@@ -49,6 +49,10 @@ export default new Router({
   }, {
       path: '/detail/:id',
       component: GoodsDetail
-  }
+  },
+  {
+    path: '/cart/',
+    component: Cart
+}
   ]
 })

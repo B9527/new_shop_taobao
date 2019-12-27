@@ -8,7 +8,7 @@
 	            </div>
 	            <div class="user_detal">
 	                <p class="user_name">{{uInfs.user_name}}</p>
-	                <div class="reg">
+	                <!-- <div class="reg">
 	                    <a href="#" class="reg_link">注册会员</a>
 	                    <div class="vip">
 	                    <span class="vip_icon">
@@ -18,34 +18,35 @@
 	                            立享PLUS特权 >
 	                        </a>
 	                    </div>
-	                </div>
+	                </div> -->
 	            </div>
-	            <div class="manage_account">
+	            <!-- <div class="manage_account">
 	                <span>
-	                    账户管理 >
+	                    退出用户 >
 	                </span>
-	            </div>
+	            </div> -->
 	        </div>
 	        <div class="yguanzhu_box">
 	            <ul class="gunzhuf">
-	                <li class="item">
+	                <!-- <li class="item">
 	                    <a href="" class="item_link">
 	                        <span>0</span>
 	                        <span>关注的商品</span>
 	                    </a>
-	                </li>
-	                <li class="item">
+	                </li> -->
+	                <!-- <li class="item">
 	                    <a href="" class="item_link">
 	                        <span>0</span>
 	                        <span>关注的店铺</span>
 	                    </a>
-	                </li>
-	                <li class="item">
+	                </li> -->
+	                <!-- <li class="item">
 	                    <a href="" class="item_link">
 	                        <span>8</span>
 	                        <span>浏览记录</span>
 	                    </a>
-	                </li>
+	                </li> -->
+					
 	            </ul>
 	        </div>
 	    </section>
@@ -82,7 +83,7 @@
 	            </ul>
 	        </div>
 	    </section>
-	    <section class="my_order_box">
+	    <!-- <section class="my_order_box">
 	        <div class="order_top_box">
 	            <div class="order_left">
 	                <img src="../assets/images/mypackage.png" alt="">
@@ -120,18 +121,18 @@
 	                </li>
 	            </ul>
 	        </div>
-	    </section>
+	    </section> -->
 	    <section class="my_order_box my_b_info">
-	        <div class="order_top_box">
-	            <div class="order_left">
+	        <div class="order_top_box" v-on:click="logOutFun">
+	            <div class="order_left" >
 	                <img src="../assets/images/baitiao1.png" alt="">
-	                <span>京东白条</span>
+	                <span>退出登陆</span>
 	            </div>
 	            <div class="order_right">
-	                <span>白条还款、激活获礼包></span>
+	                <span>></span>
 	            </div>
 	        </div>
-	        <div class="order_top_box">
+	        <!-- <div class="order_top_box">
 	            <div class="order_left">
 	                <img src="../assets/images/baitiao2.png" alt="">
 	                <span>客户服务</span>
@@ -157,9 +158,9 @@
 	            <div class="order_right">
 	                <span>会员俱乐部></span>
 	            </div>
-	        </div>
+	        </div> -->
 	    </section>
-	    <section class="my_order_box my_b_info">
+	    <!-- <section class="my_order_box my_b_info">
 	        <div class="order_top_box">
 	            <div class="order_left">
 	                <img src="../assets/images/huo1.png" alt="">
@@ -205,7 +206,7 @@
 	                <span>></span>
 	            </div>
 	        </div>
-	    </section>
+	    </section> -->
 	</main>
 	</div>
 </template>
@@ -226,7 +227,7 @@
 				if(window.sessionStorage.userInfo){
 					let uObj = JSON.parse(window.sessionStorage.userInfo);
 					let useId = uObj.user_id;
-					_this.$http.get('/userinfo',{
+					_this.$http.get('/api_shop/my_user/userinfo',{
 						params:{
 							uId:useId
 						}
@@ -241,6 +242,12 @@
 						path:'/login',
 					})
 				}
+			},
+			logOutFun(){
+				this.$router.push({
+						path:'/login',
+					});
+				console.log("log out");
 			}
 		}
 	}

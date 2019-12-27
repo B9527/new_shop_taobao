@@ -22,12 +22,12 @@
                 <a href="javascript:;" class="tab-item-link">
                     <img src="../assets/images/n-cart.png" alt="" class="tab-item-icon">
                 </a>
-            </router-link>
+            </router-link> -->
             <router-link tag="li" to="/mine" class="tabItem">
                 <a href="javascript:;" class="tab-item-link">
                     <img src="../assets/images/n-me.png" alt="" class="tab-item-icon">
                 </a>
-            </router-link> -->
+            </router-link>
         </ul>
     </footer>
   </div>

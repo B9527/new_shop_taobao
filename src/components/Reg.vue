@@ -42,7 +42,7 @@
 				}else if(_this.regpasswd!==_this.regpasswd_ag){
 					alert('两次输入的密码不一致');
 				}else{
-					_this.$http.post('/reg',{
+					_this.$http.post('api_shop/my_user/reg',{
 						regName:_this.regname,
 						regPasswd:_this.regpasswd
 				}).then((res)=>{
@@ -52,7 +52,7 @@
 							//reg success, go to this login page
 							window.history.go(-1);
 						}else{
-							alert('注册失败');
+							alert(_this.regInfo.error_msg);
 						}
 					}else{
 						alert('出现错误');

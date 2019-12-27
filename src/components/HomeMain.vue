@@ -78,14 +78,6 @@
                 _this.$http.get('/api_shop/products').then((res)=>{
                     _this.homeDatas = res.data.home_data;
                     _this.mainDatas = res.data.main_data
-                    // _this.homeDatas.push(res.data[0]);
-                    // _this.homeDatas.push(res.data[1]);
-                    // _this.homeDatas.push(res.data[2]);
-                    // _this.homeDatas.push(res.data[3]);
-                    // _this.homeDatas.push(res.data[4]);
-                    // _this.homeDatas.push(res.data[5]);
-                    // _this.homeDatas.push(res.data[6]);
-                    // _this.mainDatas = res.data;
                 },(err)=>{
                     console.log(err);
                 })

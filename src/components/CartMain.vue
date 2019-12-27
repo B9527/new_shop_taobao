@@ -1,23 +1,23 @@
 <template>
 		<main class="cart_box">
-		    <div class="cart_tip clearfix">
+		    <!-- <div class="cart_tip clearfix">
 		        <span>登录后可同步电脑与手机购物车中的商品</span>
 		        <a href="#" class="login">登录</a>
-		    </div>
-		    <div class="cart_content clearfix" v-for="item in cartDatas">
+		    </div> -->
+		    <div class="cart_content clearfix" v-for="(item, index) in cartDatas" :key="index">
 		        <div class="cart_shop clearfix">
 		            <div class="cart_check_box">
 		                <div class="check_box">
 
 		                </div>
 		            </div>
-		            <div class="shop_info clearfix">
+		            <!-- <div class="shop_info clearfix">
 		                <img src="../assets/images/buy-logo.png" alt="" class="shop_icon">
 		                <span class="shop_name">{{item.shop_name}}</span>
-		            </div>
-		            <div class="cart_free clearfix">
+		            </div> -->
+		            <!-- <div class="cart_free clearfix">
 		                <span class="free_tip">优惠券></span>
-		            </div>
+		            </div> -->
 		        </div>
 		        <div class="cart_item">
 		            <div class="cart_item_box">
@@ -72,7 +72,7 @@
 		methods:{
 			getCartDatas(){
 				let _this = this;
-				_this.$http.get('/cart').then((res)=>{
+				_this.$http.get('/api_shop/cart').then((res)=>{
 					_this.cartDatas = res.data;
 				},(err)=>{
 					console.log(err);

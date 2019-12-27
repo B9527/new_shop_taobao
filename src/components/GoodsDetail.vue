@@ -41,7 +41,7 @@
            </section>
           
         </main>
-        <!-- <footer class="cart_d_footer">
+        <footer class="cart_d_footer">
             <div class="m">
                 <ul class="m_box">
                     <li class="m_item">
@@ -64,7 +64,7 @@
                     <a href="#" class="buybuy">立即购买</a>
                 </div>
             </div>
-        </footer> -->
+        </footer>
 	</div>
 </template>
 <script>
@@ -81,7 +81,6 @@
         },
         watch:{
             $route(to){
-                //console.log(to);
                 var reg=/detail\/\d+/;
                 if(reg.test(to.path)){
                     var categotyId=this.$route.params.id || 0;
@@ -102,20 +101,11 @@
                     _this.goodsData = res.data.goods_data;
                     _this.goodsImages = res.data.image_url_list;
                     this.$previewRefresh();
-                    // _this.goodsImages.push("https://gd4.alicdn.com/bao/uploaded/i4/TB1_1SPIpXXXXXxXFXXXXXXXXXX_!!0-item_pic.jpg_400x400.jpg")
-                    // let tempGoodsImages;
-                    // tempGoodsImages = res.data[0];
-                    // tempGoodsImages.forEach(element => {
-                    //     console.log(element.image_url);
-                    //      _this.goodsImages.push(element.image_url)
-                    // });
-                    
                 },(err)=>{
                     console.log(err);
                 })
             },
             showImage(){
-                // console.log(this.goodsImages);
                 this.goodsImages.forEach(element => {
                     console.log(element.image_url)
                 });
